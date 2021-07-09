@@ -1,0 +1,3 @@
+Python 编码规范
+1. 使用Pylint来检查代码
+pylint是一个在Python源代码中查找bug的工具，可以完成

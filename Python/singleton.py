@@ -1,5 +1,7 @@
 from threading import Lock
-
+"""
+利用元类实现单例模式
+"""
 class Singleton(type):
     def __init__(cls, *args, **kwargs):
         cls.__instance = None
@@ -27,7 +29,9 @@ b = Spam()
 c = Spam()
 print(a is b is c)
 
-
+"""
+普通类实现 线程安全的单例模式
+"""
 class Singleton1(object):
     __singleton_instance = None
     __singleton_lock = Lock()
@@ -45,7 +49,9 @@ c = Singleton1()
 print(a is b is c)
 
 
-
+"""
+实现方式3
+"""
 class SingletonM(type):
     _instances = {}
 
