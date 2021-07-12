@@ -1,4 +1,4 @@
-
+# 源码解析
 ```python
 class Condition:
     """Class that implements a condition variable.	
@@ -160,3 +160,4 @@ class Condition:
 
     notifyAll = notify_all
 ```
+# 用Condition实现生产者 & 消费者模型
