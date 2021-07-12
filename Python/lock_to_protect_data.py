@@ -50,6 +50,3 @@ expected = how_many * 5
 found = counter.count
 
 print(f"Counter should be {expected}, now should got {found}")
-
-# 如何避免这个问题？
-# 使用锁

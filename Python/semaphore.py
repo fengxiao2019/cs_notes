@@ -14,7 +14,7 @@ cond = threading.Condition()
 event = threading.Event()
 item = 0
 items = []
-# 用信号量实现生产者 消费者
+# 用event实现生产者 消费者
 
 def consume():
     while True:
@@ -32,7 +32,7 @@ def produce():
             logging.info(f'-----produce item: {items} -pid: {os.getpid()}')
         event.set()
         time.sleep(1)
-    # event.clear()
+        event.clear()
 
 
 def main():
@@ -47,6 +47,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-
-from concurrent.futures import thread
-thread.ThreadPoolExecutor
