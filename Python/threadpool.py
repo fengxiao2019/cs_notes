@@ -8,3 +8,4 @@
 """
 class ThreadPool(object):
     def __init__(self, max_workers=None, thread_prefix_name='', ):
+        pass

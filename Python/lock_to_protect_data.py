@@ -9,6 +9,7 @@
 把未经过互斥锁保护的的数据开放给多个线程同时修改，可能导致这份数据的结构遭到破坏
 可以利用threading 内置模块的lock类确保程序中的固定关系不会在多个线程环境下受到干扰
 """
+
 import threading
 class Counter:
     def __init__(self):
