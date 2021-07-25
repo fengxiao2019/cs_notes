@@ -116,7 +116,7 @@ class Foo:
 ```
 
 # [ 1115. 交替打印FooBar][3]
-我们提供一个类：
+我们提供一个类
 ```python
 """
 两个不同的线程将会共用一个 FooBar 实例。其中一个线程将会调用 foo() 方法，另一个线程将会调用 bar() 方法。
@@ -166,7 +166,7 @@ class FooBar:
             self.foo_lock.release()
 ```
 
-# [1117. H2O 生成][4] 
+# [1117. H2O 生成][4]
 ```python
 class H2O:
     def __init__(self):

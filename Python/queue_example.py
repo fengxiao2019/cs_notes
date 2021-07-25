@@ -1,4 +1,61 @@
 """
+简单的生产者-消费者模型
+利用queue
+"""
+import threading
+import uuid
+
+# 定义退出标志 - 哨兵任务
+class Sentinal(object):
+    pass
+
+
+class Consumer(threading.Thread):
+    def __init__(self, queue):
+        self._queue = queue
+        self._name = '_consumer_' + uuid.uuid4().hex
+        return super(Consumer, self).__init__()
+
+    # override the run function
+    def run(self) -> None:
+        while True:
+            task = self._queue.get()
+            # 判断是否是哨兵任务
+            if isinstance(task, Sentinal):
+                return
+            print(f'{self._name} receive {task}')
+        print(f"{self._name} closed")
+
+
+class Producer(threading.Thread):
+    def __init__(self, queue):
+        self._queue = queue
+        super(Producer, self).__init__()
+
+    def run(self) -> None:
+        i = 0
+        while i < 10:
+            self._queue.put(f'task_{i}')
+            print("producer", i)
+            i += 1
+        self._queue.put(Sentinal())
+
+from queue import Queue
+cur_queue = Queue()
+
+producer = Producer(cur_queue)
+producer.start()
+producer.join()
+consumer = Consumer(cur_queue)
+consumer.start()
+consumer.join()
+
+#
+
+
+
+
+"""
 任务
 要构建这样一个系统
 1. 持续从数码相册中获取照片

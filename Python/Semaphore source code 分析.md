@@ -4,7 +4,7 @@
 ```python
 class Semaphore:
     """
-	该类实现了信号器对象。
+	该类实现了信号器对象
 Semaphores管理一个计数器，代表release()调用的次数减去acquire()调用的次数，再加上一个初始值。如果有必要，acquisition()方法会阻塞，直到它可以返回而不使计数器变成负值。如果没有给出，值默认为1。
     """
 
