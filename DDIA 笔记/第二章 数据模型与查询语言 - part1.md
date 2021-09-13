@@ -159,4 +159,9 @@ db.products.findOne()
 反范式 one to many 的例子和 many to one 的思想是一样的，都是“反范式”的体现。
 总结：
 如果双向引用能够优化你的模式，并且你愿意付出没有**原子更新的代价**，你可以使用双向引用。
-如果你正在引用，你可以将数据从 “one " side -\> "N “ side，或者从 "N " side转到 "一 “side，进行范式。
+如果你正在引用，你可以将数据从 “one " side -\> "N “ side，或者从 "N " side转到 “one “side，进行范式。
+
+
+引用：[https://www.mongodb.com/blog/post/6-rules-of-thumb-for-mongodb-schema-design-part-3][1]
+
+[1]:	https://www.mongodb.com/blog/post/6-rules-of-thumb-for-mongodb-schema-design-part-3
