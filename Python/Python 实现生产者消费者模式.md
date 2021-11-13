@@ -62,7 +62,7 @@ class Queue:
         self.maxsize = maxsize # 设置容量，如果 <= 0,不设限
         self._init(maxsize)
       	# 三个condition共享的锁，也就是要判断是否为空， 必须先拿到锁
-		# 要判断是否not_full也要先闹到锁
+		# 要判断是否not_full也要先拿到锁
 		# 要判断是否所有任务都完成，也要拿到锁
         self.mutex = threading.Lock()
  
@@ -139,7 +139,7 @@ def get(self, block=True, timeout=None):
         return item
 ```
 ### `all_tasks_done`的作用
-> 源代码中的注释： Notify all_tasks_done whenever the number of unfinished tasks drops to zero; thread waiting to join() is notified to resume
+> 源代码中的注释： Notify all\_tasks\_done whenever the number of unfinished tasks drops to zero; thread waiting to join() is notified to resume
 > 对队列中所有的任务都完成时，wait在queue的join函数上的线程被唤醒
 我们知道在`put`方法中，每添加一个任务，`self.unfinished_tasks`就会加1
 减1的动作在`task_done`方法中

@@ -4,12 +4,12 @@
 """
 import threading
 import uuid
-
 # 定义退出标志 - 哨兵任务
 class Sentinal(object):
     pass
 
 
+import bisect
 class Consumer(threading.Thread):
     def __init__(self, queue):
         self._queue = queue
