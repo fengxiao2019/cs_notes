@@ -1,4 +1,4 @@
-[db 语句监控][1]
+[db 语句执行时间监控][1]
 ```python
 import logging
 import time

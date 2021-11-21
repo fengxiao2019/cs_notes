@@ -11,11 +11,4 @@ slack的工程师分享了将airflow从py2迁移到py3的过程，非常详细�
 6. **Migrate the Airflow services to Python 3**: Switched web server, scheduler, and flower to Python 3.
 7. **Clean up phase 2**: Cleaned up Python 2 references and virtual environments, and terminated Python 2 celery workers.
 
-现在开发环境做，测试完全通过后，再在生产环境部署。
-使用到的工具：
-automatic Python 2 to 3 converters: 2to3 and futurize. 
-Use Poetry for dependency management of Python 2 and 3:
-pyenv 虚拟环境管理
-详细细节见原文
-
 [1]:	https://slack.engineering/migrating-slack-airflow-to-python-3-without-disruption/

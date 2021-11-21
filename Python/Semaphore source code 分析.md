@@ -11,6 +11,7 @@ Semaphores管理一个计数器，代表release()调用的次数减去acquire()�
     # After Tim Peters' semaphore class, but not quite the same (no maximum)
 
     def __init__(self, value=1):
+        # 初始的value 的值必须大于等于0
         if value < 0:
             raise ValueError("semaphore initial value must be >= 0")
         self._cond = Condition(Lock())
@@ -19,7 +20,6 @@ Semaphores管理一个计数器，代表release()调用的次数减去acquire()�
     def acquire(self, blocking=True, timeout=None):
         """
 		acquire -> self._value -= 1
-		case1:
 			无参数的情况下
 				self._value 如果大于0 ，直接返回
 				self._value 如果等于0，阻塞，直到其他线程release

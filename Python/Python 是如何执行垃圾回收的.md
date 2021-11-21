@@ -1,4 +1,4 @@
-Garbage Collection - python
+Python 是如何执行垃圾回收的
 **memory management**
 ![]()
 Arena -\> pool -\> blocks
@@ -19,9 +19,9 @@ pool使用的也是双向链表
 block是单向链表
 
 pool分成三种类型：
-usedpools 
+usedpools
 fullpools
-为什么python选用4k作为sy**system_page_size**
+为什么python选用4k作为sy**system\_page\_size**
 usedpools 为一个数组
 
 
@@ -43,7 +43,7 @@ usedpools 为一个数组
 usedpools 类型：固定大小的数组
 **创建对象流程**
 object.c file
----- --
+---- 
 ```c
 # object.c file
 _PyObject_New {
@@ -122,4 +122,5 @@ _PyObject_Malloc(void *ctx, size_t nbytes)
 
 
 ```
+
 
